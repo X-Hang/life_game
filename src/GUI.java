@@ -1,7 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-
+//软件工程第一次实验，双飞测试
 public class GUI extends JFrame implements ActionListener {
     private static GUI frame;
     private Cell cell;
