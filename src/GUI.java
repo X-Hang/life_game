@@ -1,7 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-//软件工程第一次实验，双飞测试
+
 public class GUI extends JFrame implements ActionListener {
     private static GUI frame;
     private Cell cell;
@@ -50,9 +50,10 @@ public class GUI extends JFrame implements ActionListener {
         backPanel = new JPanel(new BorderLayout());
         centerPanel = new JPanel(new GridLayout(maxWidth, maxLength));
         bottomPanel = new JPanel();
+        //bottomPanel = new JPanel();
         this.setContentPane(backPanel);
         backPanel.add(centerPanel, "Center");
-        backPanel.add(bottomPanel, "South");
+        backPanel.add(bottomPanel, "North");
 
         nGrid = new JButton[maxWidth][maxLength];
         isSelected = new boolean[maxWidth][maxLength];
@@ -88,22 +89,32 @@ public class GUI extends JFrame implements ActionListener {
         stop = new JButton("暂停");
         exit = new JButton("退出");
 
+        bottomPanel.add(randomInit);
+        bottomPanel.add(start);
+        bottomPanel.add(stop);
+        bottomPanel.add(nextGeneration);
+        bottomPanel.add(clearGeneration);
+        bottomPanel.add(clearCell);
+        bottomPanel.add(exit);
+//        bottomPanel.add(jLength);
+//        bottomPanel.add(lengthList);
+//        bottomPanel.add(jWidth);
+//        bottomPanel.add(widthList);
+        //bottomPanel.add(ok);
+        bottomPanel.add(jNowGeneration);
+        bottomPanel.add(jbNowGeneration);
+        //bottomPanel.add(clearGeneration);
+        //bottomPanel.add(randomInit);
+        //bottomPanel.add(clearCell);
+        //bottomPanel.add(start);
+        //bottomPanel.add(nextGeneration);
+        //bottomPanel.add(stop);
+        //bottomPanel.add(exit);
         bottomPanel.add(jLength);
         bottomPanel.add(lengthList);
         bottomPanel.add(jWidth);
         bottomPanel.add(widthList);
         bottomPanel.add(ok);
-        bottomPanel.add(jNowGeneration);
-        bottomPanel.add(jbNowGeneration);
-        bottomPanel.add(clearGeneration);
-        bottomPanel.add(randomInit);
-        bottomPanel.add(clearCell);
-        bottomPanel.add(start);
-        bottomPanel.add(nextGeneration);
-        bottomPanel.add(stop);
-        bottomPanel.add(exit);
-
-
         // 设置窗口
         this.setSize(1000, 650);
         this.setResizable(true);
