@@ -3,7 +3,23 @@ public class Cell {
     private int maxLength;
     private int maxWidth;
     private int nowGeneration;
-    private int[][] grid; //一个数据代表一个细胞,0代表死，1代表活
+    public int[][] grid; //一个数据代表一个细胞,0代表死，1代表活
+
+    public int getMaxLength() {
+        return maxLength;
+    }
+
+    public void setMaxLength(int maxLength) {
+        this.maxLength = maxLength;
+    }
+
+    public int getMaxWidth() {
+        return maxWidth;
+    }
+
+    public void setMaxWidth(int maxWidth) {
+        this.maxWidth = maxWidth;
+    }
 
     public Cell(int maxLength, int maxWidth) {
         this.maxLength = maxLength;
@@ -72,7 +88,7 @@ public class Cell {
     }
 
     //获取细胞的邻居数量
-    private int getNeighborCount(int i1, int j1) {
+    public int getNeighborCount(int i1, int j1) {
         int count = 0;
         for (int i = i1 - 1; i <= i1 + 1; i++)
             for (int j = j1 - 1; j <= j1 + 1; j++)
