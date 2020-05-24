@@ -16,18 +16,22 @@ public class Cell {
         }
     }
 
+    //用已有的数组对地图进行初始化
     public void setGrid(int[][] grid) {
         this.grid = grid;
     }
 
+    //返回地图所对应的数组
     public int[][] getGrid() {
         return grid;
     }
 
+    //设置代数
     public void setNowGeneration(int nowGeneration){
         this.nowGeneration = nowGeneration;
     }
 
+    //返回现在细胞的代数
     public int getNowGeneration(){
         return nowGeneration;
     }
