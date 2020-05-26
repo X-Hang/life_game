@@ -28,11 +28,19 @@ public class CellTest {
         cell.setGrid(testgrid);
         boolean tag = true;
         int[][] test = cell.getGrid();//test==grid
-        testgrid[1][1]=1;
+        int [][]termgrid = new int[cell.getMaxLength() + 2][cell.getMaxWidth() + 2];
+        for (int i = 0; i <= cell.getMaxLength() + 1; i++) {
+            for (int j = 0; j <= cell.getMaxWidth() + 1; j++)
+                termgrid[i][j] = testgrid[i][j];
+        }
+        termgrid[0][1]=1;
         for (int i = 0; i <= cell.getMaxLength() + 1; i++) {
             for (int j = 0; j <= cell.getMaxWidth() + 1; j++) {
-                if (test[i][j] != testgrid[i][j])
+                if (test[i][j] != termgrid[i][j]){
                     tag = false;
+                    break;
+                }
+
             }
         }
         assertEquals(true, tag);
@@ -42,14 +50,23 @@ public class CellTest {
     public void getGrid() {
         cell.setGrid(testgrid);
         boolean tag = true;
-        int[][] test = cell.getGrid();
+        int[][] test = cell.getGrid();//test==grid
+        int [][]termgrid = new int[cell.getMaxLength() + 2][cell.getMaxWidth() + 2];
+        for (int i = 0; i <= cell.getMaxLength() + 1; i++) {
+            for (int j = 0; j <= cell.getMaxWidth() + 1; j++)
+                termgrid[i][j] = testgrid[i][j];
+        }
+        termgrid[0][1]=1;
         for (int i = 0; i <= cell.getMaxLength() + 1; i++) {
             for (int j = 0; j <= cell.getMaxWidth() + 1; j++) {
-                if (test[i][j] != testgrid[i][j])
+                if (test[i][j] != termgrid[i][j]){
                     tag = false;
+                    break;
+                }
+
             }
-            assertEquals(true, tag);
         }
+        assertEquals(true, tag);
     }
 
     @Test
